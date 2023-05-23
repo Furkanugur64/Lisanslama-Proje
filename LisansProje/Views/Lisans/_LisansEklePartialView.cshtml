@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering;
+@model LisansProje.Models.DTO.LisansDTO
+
+@using (Html.BeginForm("LisansSayfasi", "Lisans", FormMethod.Post, new { id = "FrmLisans" }))
+{
+    <div class="row">
+        
+        <div class="mb-3 col-md-6">              
+            @Html.LabelFor(x=>x.LisansBaslangicTarihi,	"Lisans Başlangıç Tarihi",new { @class = "required form-label"})
+            @Html.TextBoxFor(x => x.LisansBaslangicTarihi, new { @class = "form-control  genelTARIH",@id="LisansBaslangicTarihi" })
+        </div>
+
+        <div class="mb-3 col-md-6">
+            @Html.LabelFor(x=>x.ToplamYil,	"Toplam Yıl",new { @class = "required form-label"})
+            @Html.TextBoxFor(x => x.ToplamYil, new { @class = "form-control ", @type = "number",@value="1", @min = "1", @max = "99",@id="ToplamYil" })
+        </div>
+
+        <div class="mb-3 col-md-6">
+            @Html.LabelFor(x=>x.LisansKisiSayisi,	"Lisans Kişi Sayısı",new { @class = "required form-label"})
+            @Html.TextBoxFor(x => x.LisansKisiSayisi, new { @class = "form-control ", @type = "number",@value="1", @min = "1", @max = "99",@id="LisansKisiSayisi" })
+        </div>
+
+        <div class="mb-3 col-md-6">
+            @Html.LabelFor(x=>x.Kurums.KurumAdi,	"Kurum Adı",new { @class = "required form-label"})
+            @Html.DropDownListFor(x=>x.KurumID, (List<SelectListItem>)ViewBag.dgr1 ,new { @class = "form-select",@id="KurumID" })           
+        </div>
+                    
+        
+    </div>
+    <div class="row">
+        <div class="mb-3 col-md-6">
+            @Html.LabelFor(x=>x.KurumIpAdresi,	"Kurum IP Adresi",new { @class = "required form-label"})
+            @Html.TextBoxFor(x => x.KurumIpAdresi, new { @class = "form-control ",@id="KurumIpAdresi" })
+        </div>
+
+        <div class="mb-3 col-md-6">
+            @Html.LabelFor(x=>x.YazilimAdi,	"Yazılım Adı",new { @class = "required form-label"})
+            @Html.TextBoxFor(x => x.YazilimAdi, new { @class = "form-control ",@id="YazilimAdi" })
+        </div>
+
+        <div class="mb-3 col-md-6">
+            @Html.LabelFor(x=>x.YazilimProtokolNo,	"Yazılım Protokol Numarası",new { @class = "required form-label"})
+            @Html.TextBoxFor(x => x.YazilimProtokolNo, new { @class = "form-control ",@id="YazilimProtokolNo" })
+        </div>       
+    </div>
+    
+}

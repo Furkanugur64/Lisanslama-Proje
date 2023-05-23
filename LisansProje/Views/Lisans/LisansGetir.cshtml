@@ -1,0 +1,109 @@
+﻿@using LisansProje.Models
+@model List<Lisans>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lisans Getir</title>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="modal fade" tabindex="-1" id="LisansEkleModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Lisans Ekleme Sayfası</h5>
+
+                        <!--begin::Close-->
+                        <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="fa-solid fa-x"></i>
+                        </div>
+                        <!--end::Close-->
+                    </div>
+
+                    <div class="modal-body">
+                    </div>
+
+                    <div class="modal-footer">
+                        <div id="BtnLisansKaydet" class="btn btn-primary">Kaydet</div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" tabindex="-1" id="LisansDetayModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Lisans Detay Sayfası</h5>
+
+                        <!--begin::Close-->
+                        <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="fa-solid fa-x"></i>
+                        </div>
+                        <!--end::Close-->
+                    </div>
+
+                    <div class="modal-body">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+      
+        <div class="toolbar" id="kt_toolbar">
+            <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+                <div class="dropdown ml-1 col-2 mt-1">
+                    <select id="dropdown" class="select2-selection select2-selection--single form-select" aria-label="Seçim Örneği">
+                        <option selected value="1">Aktif</option>
+                        <option value="2">Arşivlenmiş</option>
+                        <option value="3">Silinmiş</option>
+                    </select>
+                </div>
+                <div class="title col-7 ">
+                    <h3 class="text-primary"><span id="title">Aktif Lisanslar</span></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:5rem;border:0">          
+            <div class="card-body">
+                @Html.Partial("_LisansFiltrelePartialView")                
+            </div>
+            <div class="text-center">
+                <div id="BtnFiltrele" class="btn btn-primary mx-3"><i class="bi bi-funnel-fill"></i>Filtrele</div>
+                <div id="BtnTemizle" class="btn btn-primary mx-3"> <i class="bi bi-brush-fill"></i>Temizle</div>
+            </div>
+            <br />
+            <hr />
+             <div style="padding:15px">
+                <table id="lisansTablosu" class="table table-bordered  gy-5 gs-7" style="width:100%">
+                    <thead>
+                        <tr class="fw-bold fs-6 text-gray-800">
+                            <th>İŞLEM</th>
+                            <th>LİSANS KODU</th>
+                            <th>KURUM ADI</th>
+                            <th>LİSANS BAŞLANGIÇ TARİHİ</th>
+                            <th>LİSANS BİTİŞ TARİHİ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            <div id="LisansEkle" class="btn btn-success ml-1 mb-4" style="width:120px; margin-left:20px">Lisans Ekle</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+

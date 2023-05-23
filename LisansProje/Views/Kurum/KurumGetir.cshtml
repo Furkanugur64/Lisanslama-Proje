@@ -1,0 +1,92 @@
+﻿@using LisansProje.Models
+@model List<Kurum>
+
+@{
+    ViewData["Title"] = "KurumGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Kurum Getir</title>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="modal fade" tabindex="-1" id="KurumEkleModal">22
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Kurum Ekleme Sayfası</h5>
+
+                        <!--begin::Close-->
+                        <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="fa-solid fa-x"></i>
+                        </div>
+                        <!--end::Close-->
+                    </div>
+
+                    <div class="modal-body">
+                    </div>
+
+                    <div class="modal-footer">
+                        <div id="BtnKurumKaydet" class="btn btn-primary">Kaydet</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" tabindex="-1" id="KurumDetayModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Kurum Detay Sayfası</h5>
+
+                        <!--begin::Close-->
+                        <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="fa-solid fa-x"></i>
+                        </div>
+                        <!--end::Close-->
+                    </div>
+
+                    <div class="modal-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="toolbar" id="kt_toolbar">
+            <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+                <div class="title col-12 ">
+                    <h3 class="text-primary text-center"><span id="title">Kurum Sayfası</span></h3>
+                </div>
+            </div>
+        </div>
+  
+        <div class="card" style="margin-top:5rem;border:0">
+            <div class="card-body">
+                @Html.Partial("_KurumFiltrelePartialView")
+            </div>          
+            <hr />
+            <div style="padding:15px">
+                <table id="kurumTablosu" class="table table-bordered gy-5 gs-7" style="width:100%">
+                    <thead>
+                        <tr class="fw-bold fs-6 text-gray-800">
+                            <th>İŞLEMLER</th>
+                            <th>KURUM ADI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+                <div id="KurumEkle" class="btn btn-success ml-1 mb-4">Kurum Ekle</div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
+

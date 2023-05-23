@@ -1,0 +1,47 @@
+﻿@model LisansProje.Models.Firma
+
+@using (Html.BeginForm("FirmaGuncelle", "Firma", FormMethod.Post, new { id = "FrmFirmaGuncelle" }))
+{
+    <div class="container">
+        @Html.HiddenFor(x => x.FirmaID, new { @class = "form-control"})
+        <div class="row">
+            <div class="mb-3 col-md-12">
+                @Html.LabelFor(x=>x.FirmaAdi,	"Firma Adı")
+                @Html.TextBoxFor(x => x.FirmaAdi, new { @class = "form-control" , @id="FirmaAdi"})
+            </div>
+
+
+            <div class="mb-3 col-md-12">
+                @Html.LabelFor(x=>x.VergiNo,	"Vergi Numarası")
+                @Html.TextBoxFor(x => x.VergiNo, new { @class = "form-control",@id="VergiNo" })
+            </div>
+
+            <div class="mb-3 col-md-12">
+                @Html.LabelFor(x=>x.Il,	"İl")
+                @Html.TextBoxFor(x => x.Il, new { @class = "form-control", @id="Il" })
+            </div>
+            <div class="mb-3 col-md-12">
+                @Html.LabelFor(x=>x.Ilce,	"İlçe")
+                @Html.TextBoxFor(x => x.Ilce, new { @class = "form-control", @id="Ilce" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mb-3 col-md-12">
+                @Html.LabelFor(x=>x.Email,	"Email Adresi")
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" , @id="Email"})
+            </div>
+
+            <div class="mb-3 col-md-12">
+                @Html.LabelFor(x=>x.Parola,	"Şifre")
+                @Html.TextBoxFor(x => x.Parola, new { @class = "form-control",@id="Sifre" })
+            </div>
+
+            <div class="mb-3 col-md-12">
+                @Html.LabelFor(x=>x.Adres,	"Adres")
+                @Html.TextBoxFor(x => x.Adres, new { @class = "form-control", @id="Adres" })               
+            </div>            
+        </div>
+        <div id="BtnFirmaGuncelle" class="btn btn-warning btn-sm">Güncelle</div>
+    </div>
+}

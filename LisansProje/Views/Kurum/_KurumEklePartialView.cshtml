@@ -1,0 +1,12 @@
+﻿@model LisansProje.Models.DTO.KurumDTO
+
+@using (Html.BeginForm("KurumEkle", "Kurum", FormMethod.Post, new { id = "FrmKurum" }))
+{
+    <div class="row">
+        <div class="mb-3 col-md-12">
+            @Html.LabelFor(x=>x.KurumAdi,	"Kurum Adı",new { @class = "required form-label"})
+            @Html.TextBoxFor(x => x.KurumAdi, new { @class = "form-control",@id="kurumadi" })
+        </div>
+    </div>
+   
+}

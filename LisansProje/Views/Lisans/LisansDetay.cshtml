@@ -1,0 +1,100 @@
+﻿@model LisansProje.Models.Lisans
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <title>Lisans Detay</title>
+</head>
+<body>
+    
+    @using (Html.BeginForm("LisansGuncelle", "Lisans", FormMethod.Post, new { id = "FrmGuncelle"}))
+    {
+        <div class="container">
+        @Html.HiddenFor(x => x.LisansID, new { @class = "form-control"})
+        <div class="row">
+            <div class="form-group col-md-6">
+                    @Html.LabelFor(x=>x.LisansKodu,	"Lisans Kodu")               
+                    @Html.TextBoxFor(x => x.LisansKodu, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(x=>x.LisansBaslangicTarihi,	"Lisans Başlangıç Tarihi")               
+                @Html.TextBoxFor(x => x.LisansBaslangicTarihi, new { @class = "datepickerGuncelle form-control", @data_date_format = "dd/mm/yyyy" })              
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(x=>x.ToplamYil,	"Toplam Yıl")                          
+                @Html.TextBoxFor(x => x.ToplamYil, new { @class = "form-control", @type = "number", @min = "1", @max = "99" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(x=>x.ToplamYil,	"Lisans Kişi Sayısı")               
+                @Html.TextBoxFor(x => x.LisansKisiSayisi, new { @class = "form-control", @type = "number", @min = "1", @max = "99" })
+            </div>
+        </div>
+        @*
+        <div class="row">
+            <div class="form-group col-md-6">
+                    @Html.LabelFor(x=>x.Kurums.KurumAdi,	"Kurum Adı")                
+                    @Html.TextBoxFor(x => x.Kurum.KurumAdi, new { @class = "form-control" })
+            </div>
+        </div>
+        *@
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(x=>x.KurumIpAdresi,	"Kurum İp Adresi")                
+                @Html.TextBoxFor(x => x.KurumIpAdresi, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(x=>x.YazilimAdi,	"Yazılım Adı")
+                @Html.TextBoxFor(x => x.YazilimAdi, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(x=>x.YazilimProtokolNo,	"Yazılım Protokol Numarası")
+                @Html.TextBoxFor(x => x.YazilimProtokolNo, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="form-group col-md-6">
+                    <div id="BtnGuncelle" data-sayfa="@Model.Durum" class="btn btn-warning">Güncelle</div>
+                    <div id="BtnGeri" class="btn btn-danger">Geri</div>
+                </div>
+               
+        </div>
+        </div>
+               
+    }
+     
+</body>
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/Script.js" asp-append-version="true"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+</html>

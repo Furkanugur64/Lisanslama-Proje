@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="toolbar" id="kt_toolbar">
+    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+        <div class="title col-12 text-center">
+            <h3 class="text-primary"><span id="title">Kurum Ekleme Sayfası</span></h3>
+        </div>
+    </div>
+</div>
+<div class="card" style="margin-top:5rem;border:0">
+    <div class="card-body py-5">
+        @Html.Partial("_KurumEklePartialView")
+    </div>
+    <div class="card-footer">
+        <div id="BtnKurumEkle" class="btn btn-primary">Kaydet</div>
+    </div>
+</div>
+
+

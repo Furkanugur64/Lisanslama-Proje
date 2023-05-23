@@ -1,0 +1,26 @@
+﻿@model LisansProje.Models.Urun
+
+@{
+    ViewData["Title"] = "UrunEkle";
+    Layout = "~/Views/Shared/_LayoutFirma.cshtml";
+}
+
+
+<div class="toolbar" id="kt_toolbar">
+    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+        <div class="title col-12 text-center">
+            <h3 class="text-primary"><span id="title">Ürün Ekleme Sayfası</span></h3>
+        </div>
+    </div>
+</div>
+<div class="card" style="margin-top:5rem;border:0">
+    <div class="card-body py-5">
+        @Html.Partial("_UrunEklePartialView")
+    </div>
+    <div class="card-footer">
+        <div id="BtnUrunEkle" class="btn btn-primary">Kaydet</div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,97 @@
+﻿@model LisansProje.Models.Lisans
+
+@using (Html.BeginForm("LisansGuncelle", "Lisans", FormMethod.Post, new { id = "FrmGuncelle" }))
+{
+    <div class="container">
+        @Html.HiddenFor(x => x.LisansID, new { @class = "form-control"})
+        
+        <div class="row">
+            <div class="mb-3 col-md-5">
+                @Html.LabelFor(x=>x.LisansKodu,	"Lisans Kodu")
+                @Html.TextBoxFor(x => x.LisansKodu, new { @class = "form-control", @readonly = "readonly" , @id="LisansKodu"})
+            </div>
+            <div class="mb-3 col-md-1">
+               <img id="BtnCopy" src="~/assets/copy.png" class="mt-4">
+            </div>
+
+
+            <div class="mb-3 col-md-6">
+                @Html.LabelFor(x=>x.LisansBaslangicTarihi,	"Lisans Başlangıç Tarihi")
+                @Html.TextBoxFor(x => x.LisansBaslangicTarihi, new { @class = "form-control  genelTARIH",@id="LisansBaslangicTarihi" })
+            </div>
+
+
+
+            <div class="mb-3 col-md-6">
+                @Html.LabelFor(x=>x.ToplamYil,	"Toplam Yıl")
+                @Html.TextBoxFor(x => x.ToplamYil, new { @class = "form-control", @type = "number", @min = "1", @max = "99", @id="ToplamYil" })
+            </div>
+
+
+
+            <div class="mb-3 col-md-6">
+                @Html.LabelFor(x=>x.ToplamYil,	"Lisans Kişi Sayısı")
+                @Html.TextBoxFor(x => x.LisansKisiSayisi, new { @class = "form-control ", @type = "number", @min = "1", @max = "99" , @id="LisansKisiSayisi"})
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                @Html.LabelFor(x=>x.Kurums.KurumAdi,	"Kurum Adı")
+                @Html.DropDownListFor(x=>x.KurumID, (List<SelectListItem>)ViewBag.dgr1 ,new { @class = "form-select ",@id="KurumAdi" })
+            </div>
+
+
+            <div class="mb-3 col-md-6">
+                @Html.LabelFor(x=>x.KurumIpAdresi,	"Kurum İp Adresi")
+                @Html.TextBoxFor(x => x.KurumIpAdresi, new { @class = "form-control" , @id="KurumIpAdresi"})
+            </div>
+
+
+
+            <div class="mb-3 col-md-6">
+                @Html.LabelFor(x=>x.YazilimAdi,	"Yazılım Adı")
+                @Html.TextBoxFor(x => x.YazilimAdi, new { @class = "form-control" , @id="YazilimAdi"})
+            </div>
+
+
+
+            <div class="mb-3 col-md-6">
+                @Html.LabelFor(x=>x.YazilimProtokolNo,	"Yazılım Protokol Numarası")
+                @Html.TextBoxFor(x => x.YazilimProtokolNo, new { @class = "form-control " , @id="YazilimProtokolNo"})
+            </div>
+        </div>
+
+        @if (ViewBag.drm == 1)
+        {
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <div id="BtnGuncelle" data-sayfa="1" class="btn btn-warning btn-sm ml-2">Güncelle</div>
+                    <div id="BtnArsivle" data-lisansid="@Model.LisansID" class="btn btn-info btn-sm ml-2">Arşivle</div>
+                    <div id="BtnSil" data-lisansid="@Model.LisansID" class="btn btn-danger btn-sm ml-2">Sil</div>
+                </div>
+            </div>
+        }
+        @if (ViewBag.drm == 2)
+        {
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <div id="BtnGuncelle" data-sayfa="2" class="btn btn-warning btn-sm ml-2">Güncelle</div>
+                    <div id="BtnAktifYap" data-lisansid="@Model.LisansID" class="btn btn-success btn-sm ml-2">Aktif Et</div>
+                    <div id="BtnSil" data-lisansid="@Model.LisansID" class="btn btn-danger btn-sm ml-2">Sil</div>
+                </div>
+            </div>
+        }
+        @if (ViewBag.drm == 3)
+        {
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <div id="BtnGuncelle" data-sayfa="3" class="btn btn-warning btn-sm">Güncelle</div>
+                    <div id="BtnAktifYap" data-lisansid="@Model.LisansID" class="btn btn-success btn-sm ml-2">Aktif Et</div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+}

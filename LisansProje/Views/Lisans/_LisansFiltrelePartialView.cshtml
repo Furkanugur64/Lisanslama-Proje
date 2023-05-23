@@ -1,0 +1,23 @@
+﻿@model LisansProje.Models.DTO.LisansDTO
+
+<div class="row">       
+        <div class="mb-3 col-md-6">              
+            @Html.LabelFor(x=>x.LisansKodu,	"Lisans Kodu",new { @class = "form-label"})
+            @Html.TextBoxFor(x => x.LisansKodu, new { @class = "form-control",@id="LisansKoduf" })
+        </div>
+
+        <div class="mb-3 col-md-6">
+        @Html.LabelFor(x=>x.Kurums.KurumAdi,	"Kurum Adı",new { @class = "form-label"})
+        @Html.DropDownListFor(x=>x.KurumID, (List<SelectListItem>)ViewBag.dgr1 ,new { @class = "form-select",@id="KurumIDf" })
+        </div>
+
+        <div class="mb-3 col-md-6">
+            @Html.LabelFor(x=>x.LisansBaslangicTarihi,	"Lisans Başlangıç Tarihi",new { @class = "form-label"})
+        @Html.TextBoxFor(x => x.LisansKisiSayisi, new { @class = "form-control  genelTARIH",@id="LisansBaslangicTarihif" })
+        </div>
+
+        <div class="mb-3 col-md-6">
+            @Html.LabelFor(x=>x.LisansBitisTarihi,	"Lisans Bitiş Tarihi",new { @class = "form-label"})
+            @Html.TextBoxFor(x => x.LisansBitisTarihi, new { @class = "form-control  genelTARIH",@id="LisansBitisTarihif" })
+        </div>                       
+</div>

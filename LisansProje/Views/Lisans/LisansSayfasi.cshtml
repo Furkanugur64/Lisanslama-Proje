@@ -1,0 +1,70 @@
+﻿@model LisansProje.Models.Lisans
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+	<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <title>Lisans Sayfasi</title>
+</head>
+<body>
+
+	<div class="col-md-4 e col-md-offset-4">
+		@using (Html.BeginForm("LisansSayfasi", "Lisans", FormMethod.Post, new { id = "FrmLisans"}))
+				{
+					<div class="form-group">
+						@Html.LabelFor(x=>x.LisansBaslangicTarihi,	"Lisans Başlangıç Tarihi")
+						@Html.TextBoxFor(x => x.LisansBaslangicTarihi, new { @class = "datepicker form-control", @data_date_format = "dd/mm/yyyy",@id="LisansBaslangicTarihi" })
+					</div>
+					<div class="form-group">
+						@Html.LabelFor(x=>x.ToplamYil,	"Toplam Yıl")
+						@Html.TextBoxFor(x => x.ToplamYil, new { @class = "form-control", @type = "number", @min = "1", @max = "99",@id="ToplamYil"})
+						
+					</div>
+					<div class="form-group">
+						@Html.LabelFor(x=>x.LisansKisiSayisi,	"Lisans Kişi Sayısı")
+						@Html.TextBoxFor(x => x.LisansKisiSayisi, new { @class = "form-control", @type = "number", @min = "1", @max = "99",@id="LisansKisiSayisi"})
+
+					</div>
+					@*<div class="form-group">
+						@Html.LabelFor(x=>x.Kurum.KurumAdi,	"Kurum Adı")
+						@Html.TextBoxFor(x => x.Kurum.KurumAdi, new { @class = "form-control",@id="KurumAdi"})
+					</div>*@
+					<div class="form-group">
+						@Html.LabelFor(x=>x.KurumIpAdresi,	"Kurum IP Adresi")
+						@Html.TextBoxFor(x => x.KurumIpAdresi, new { @class = "form-control",@id="KurumIpAdresi"})
+					</div>
+					<div class="form-group">
+						@Html.LabelFor(x=>x.YazilimAdi,	"Yazılım Adı")
+						@Html.TextBoxFor(x => x.YazilimAdi, new { @class = "form-control",@id="YazilimAdi" })
+					</div>
+					<div class="form-group">
+						@Html.LabelFor(x=>x.YazilimProtokolNo,	"Yazılım Protokol Numarası")
+						@Html.TextBoxFor(x => x.YazilimProtokolNo, new { @class = "form-control",@id="YazilimProtokolNo" })
+					</div>
+					<div id="Btnkaydet" class="btn btn-primary">Kaydet</div>
+					<div id="BtnListele" class="btn btn-success">Lisans Listesi</div>
+				}
+			
+		</div>
+	
+</body>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/Script.js" asp-append-version="true"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+	
+</script>
+</html>

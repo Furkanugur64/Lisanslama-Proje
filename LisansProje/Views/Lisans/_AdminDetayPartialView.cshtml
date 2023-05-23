@@ -1,0 +1,29 @@
+﻿@model LisansProje.Models.Admin
+
+@using (Html.BeginForm("AdminGuncelle", "Lisans", FormMethod.Post, new { id = "FrmAdminGuncelle" }))
+{
+    <div class="container">
+        @Html.HiddenFor(x => x.ID, new { @class = "form-control"})
+
+        <div class="row">
+            <div class="mb-3 col-md-12">
+                @Html.LabelFor(x=>x.KullaniciAdi,	"Kullanıcı Adı")
+                @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" , @id="KullaniciAdi"})
+            </div>
+
+
+            <div class="mb-3 col-md-12">
+                @Html.LabelFor(x=>x.Sifre,	"Şifre")
+                @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control",@id="Sifre" })
+            </div>
+
+            <div class="mb-3 col-md-12">
+                @Html.LabelFor(x=>x.Mail,	"Mail Adresi")
+                @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @id="Mail" })
+            </div>
+           
+        </div>
+        <div id="BtnAdminGuncelle" class="btn btn-warning btn-sm">Güncelle</div>
+    </div>
+
+}

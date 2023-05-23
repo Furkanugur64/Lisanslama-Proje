@@ -1,0 +1,19 @@
+﻿@model LisansProje.Models.Kurum
+
+@using (Html.BeginForm("AdminGuncelle", "Lisans", FormMethod.Post, new { id = "FrmKurumGuncelle" }))
+{
+    <div class="container">
+        @Html.HiddenFor(x => x.ID, new { @class = "form-control"})
+
+        <div class="row">
+            <div class="mb-3 col-md-12">
+                @Html.LabelFor(x=>x.KurumAdi,	"Kurum Adı")
+                @Html.TextBoxFor(x => x.KurumAdi, new { @class = "form-control" , @id="kurumadi"})
+            </div>
+        </div>
+        <div id="BtnKurumGuncelle" class="btn btn-warning btn-sm">Güncelle</div>
+        <div id="BtnKurumSil" data-id="@Model.ID" class="btn btn-danger btn-sm">Sil</div>
+    </div>
+
+}
+

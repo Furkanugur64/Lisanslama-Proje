@@ -1,0 +1,98 @@
+﻿@model LisansProje.Models.Lisans
+<script src="~/js/Script.js" asp-append-version="true"></script>
+@*<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+*@    @using (Html.BeginForm("LisansGuncelle", "Lisans", FormMethod.Post, new { id = "FrmGuncelle" }))
+    {
+        <div class="container">
+            @Html.HiddenFor(x => x.LisansID, new { @class = "form-control"})
+            <div class="row">
+                <div class="form-group col-md-5">
+                    @Html.LabelFor(x=>x.LisansKodu,	"Lisans Kodu")
+                    @Html.TextBoxFor(x => x.LisansKodu, new { @class = "form-control", @readonly = "readonly" , @id="LisansKodu"})
+                </div>
+                <div class="form-group col-md-1">
+                <i id="BtnCopy" class="btn-copy fa-solid fa-copy fa-2x mt-4"></i>                
+                 </div>
+
+            
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(x=>x.LisansBaslangicTarihi,	"Lisans Başlangıç Tarihi")
+                    @Html.TextBoxFor(x => x.LisansBaslangicTarihi, new { @class = "datepicker form-control", @data_date_format = "dd/mm/yyyy", @id="LisansBaslangicTarihi" })
+                </div>
+            
+
+            
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(x=>x.ToplamYil,	"Toplam Yıl")
+                    @Html.TextBoxFor(x => x.ToplamYil, new { @class = "form-control", @type = "number", @min = "1", @max = "99", @id="ToplamYil" })
+                </div>
+          
+
+            
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(x=>x.ToplamYil,	"Lisans Kişi Sayısı")
+                    @Html.TextBoxFor(x => x.LisansKisiSayisi, new { @class = "form-control", @type = "number", @min = "1", @max = "99" , @id="LisansKisiSayisi"})
+                </div>
+            </div>
+
+            <div class="row">
+               @* <div class="form-group col-md-6">
+                    @Html.LabelFor(x=>x.Kurum.KurumAdi,	"Kurum Adı")
+                    @Html.TextBoxFor(x => x.Kurum.KurumAdi, new { @class = "form-control", @id="KurumAdi" })
+                </div>*@
+            
+            
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(x=>x.KurumIpAdresi,	"Kurum İp Adresi")
+                    @Html.TextBoxFor(x => x.KurumIpAdresi, new { @class = "form-control" , @id="KurumIpAdresi"})
+                </div>
+            
+
+            
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(x=>x.YazilimAdi,	"Yazılım Adı")
+                    @Html.TextBoxFor(x => x.YazilimAdi, new { @class = "form-control" , @id="YazilimAdi"})
+                </div>
+            
+
+            
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(x=>x.YazilimProtokolNo,	"Yazılım Protokol Numarası")
+                    @Html.TextBoxFor(x => x.YazilimProtokolNo, new { @class = "form-control" , @id="YazilimProtokolNo"})
+                </div>
+            </div>
+            
+        @if (ViewBag.drm == 1)
+        {
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <div id="BtnGuncelle" data-sayfa="1" class="btn btn-warning ml-2">Güncelle</div>
+                    <div id="BtnArsivle" data-lisansid="@Model.LisansID" class="btn btn-info ml-2">Arşivle</div>
+                    <div id="BtnSil" data-lisansid="@Model.LisansID" class="btn btn-danger ml-2">Sil</div>                    
+                </div>
+            </div>
+        }
+        @if (ViewBag.drm == 2)
+        {
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <div id="BtnGuncelle" data-sayfa="2" class="btn btn-warning ml-2">Güncelle</div>
+                    <div id="BtnAktifYap" data-lisansid="@Model.LisansID" class="btn btn-success ml-2">Aktif Et</div>
+                    <div id="BtnSil" data-lisansid="@Model.LisansID" class="btn btn-danger ml-2">Sil</div>                   
+                </div>
+            </div>
+        }
+        @if (ViewBag.drm == 3)
+        {
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <div id="BtnGuncelle" data-sayfa="3" class="btn btn-warning">Güncelle</div>
+                    <div id="BtnAktifYap" data-lisansid="@Model.LisansID" class="btn btn-success  ml-2">Aktif Et</div>
+                </div>
+            </div>
+        }
+        
+        </div>
+
+    }
+    

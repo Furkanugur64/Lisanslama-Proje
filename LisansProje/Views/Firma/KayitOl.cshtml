@@ -1,0 +1,108 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base href="../../../">
+	<title>Kayıt Sayfası</title>
+	<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
+	<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://keenthemes.com/metronic" />
+	<meta property="og:site_name" content="Keenthemes | Metronic" />
+	<link rel="shortcut icon" href="~/assets/media/logos/favicon.ico" />
+	<!--begin::Fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+	<!--end::Fonts-->
+	<!--begin::Global Stylesheets Bundle(used by all pages)-->
+	<link href="~/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="~/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Global Stylesheets Bundle-->
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+<body id="kt_body" class="bg-body">
+	<!--begin::Main-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Authentication - Sign-up -->
+		<div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed" style="background-image: url(assets/media/illustrations/development-hd.png)">
+			<!--begin::Content-->
+			<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+				<!--begin::Logo-->
+				<a href="../../demo5/dist/index.html" class="mb-12">
+					<img alt="Logo" src="~/assets/media/logos/logo-2-dark.svg" class="h-45px" />
+				</a>
+				<!--end::Logo-->
+				<!--begin::Wrapper-->
+				<div class="w-lg-600px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+					<!--begin::Form-->
+					@using (Html.BeginForm("KayitOl", "Firma", FormMethod.Post, new { id = "FrmFirmaKayitOl" }))
+                    {					
+					
+						<div class="fv-row mb-7">
+							<label class="form-label fw-bolder text-dark fs-6">Firma Adı</label>
+							<input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="FirmaAdi" autocomplete="off" />
+						</div>
+
+						<div class="fv-row mb-7">
+							<label class="form-label fw-bolder text-dark fs-6">Vergi Numarası</label>
+							<input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="VergiNo" autocomplete="off" />
+						</div>
+						<div class="fv-row mb-7">
+							<label class="form-label fw-bolder text-dark fs-6">İl</label>
+							<input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="Il" autocomplete="off" />
+						</div>
+						<div class="fv-row mb-7">
+							<label class="form-label fw-bolder text-dark fs-6">İlçe</label>
+							<input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="Ilce" autocomplete="off" />
+						</div>
+						<div class="fv-row mb-7">
+							<label class="form-label fw-bolder text-dark fs-6">Email</label>
+							<input class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="Email" autocomplete="off" />
+						</div>
+						<div class="mb-10 fv-row" data-kt-password-meter="true">
+							<div class="mb-1">
+								<label class="form-label fw-bolder text-dark fs-6">Şifre</label>
+								<div class="position-relative mb-3">
+									<input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="Parola" autocomplete="off" />
+									<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+										<i class="bi bi-eye-slash fs-2"></i>
+										<i class="bi bi-eye fs-2 d-none"></i>
+									</span>
+								</div>						
+							</div>	
+						</div>
+						<div class="fv-row mb-7">
+							<label class="form-label fw-bolder text-dark fs-6">Adres</label>
+							<input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="Adres" autocomplete="off" />
+						</div>
+						<div class="text-center">
+							<div id="BtnFirmaKayitOl" class="btn btn-lg btn-primary w-100 mb-5">Kayıt Ol</div>
+						</div>
+						<div class="text-gray-400 fw-bold fs-4">
+							Hesabın Var Mı ?
+							<a id="BtnGirisYap" href="#" class="link-primary fs-6 fw-bolder">Giriş Yap</a>
+						</div>
+					}
+				</div>
+			</div>
+			<div class="d-flex flex-center flex-column-auto p-10">
+				<div class="d-flex align-items-center fw-bold fs-6">
+					<a href="https://isyazilim.com.tr/" class="text-muted text-hover-primary px-2">Hakkımızda</a>
+					<a href="mailto:info@isyazilim.com.tr " class="text-muted text-hover-primary px-2">İletişim</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="~/assets/plugins/global/plugins.bundle.js"></script>
+	<script src="~/assets/js/scripts.bundle.js"></script>
+	<script src="~/assets/js/custom/authentication/sign-up/general.js"></script>
+	<script src="~/js/firma.js"></script>
+</body>
+</html>

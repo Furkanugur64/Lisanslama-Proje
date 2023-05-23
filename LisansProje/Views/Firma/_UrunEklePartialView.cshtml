@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering;
+@model LisansProje.Models.Urun
+
+@using (Html.BeginForm("UrunEkle", "Firma", FormMethod.Post, new { id = "FrmUrunEkle" }))
+{
+    <div class="row">
+        <div class="mb-3 col-md-12">
+            @Html.LabelFor(x=>x.UrunAdi,	"Ürün Adı",new { @class = "required form-label"})
+            @Html.TextBoxFor(x => x.UrunAdi, new { @class = "form-control",@id="UrunAdi" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-3 col-md-12">
+            @Html.LabelFor(x=>x.WebSitesi,	"Web Sitesi",new { @class = "required form-label"})
+            @Html.TextBoxFor(x => x.WebSitesi, new { @class = "form-control ",@id="WebSitesi" })
+        </div>
+    </div>
+    @*<div class="row">
+        <div class="mb-3 col-md-12">
+            @Html.LabelFor(x=>x.ServisUrl,	"Servis Url",new { @class = "required form-label"})
+            @Html.TextBoxFor(x => x.ServisUrl, new { @class = "form-control ",@id="ServisUrl" })
+        </div>
+    </div>*@
+    
+
+
+}
