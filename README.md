@@ -44,7 +44,7 @@ API tarafında, güvenliği sağlamak için JWT token yöntemi kullanılmıştı
 ------------
 
 ## Token Girilmediğinde (Unauthorized)
-![](https://i.hizliresim.com/gcm1s96.png)
+![](https://i.hizliresim.com/jovxw53.png)
 ------------
 
 ## Token Girilince Çıktı Alma 
