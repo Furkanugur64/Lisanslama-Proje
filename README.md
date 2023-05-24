@@ -47,7 +47,8 @@ API tarafında, güvenliği sağlamak için JWT token yöntemi kullanılmıştı
 ![](https://i.hizliresim.com/gcm1s96.png)
 ------------
 
-## Token Girilince Çıktı Alma
+## Token Girilince Çıktı Alma 
+#### Header kısmına Authorization parametresi eklenerek value olarak Bearer yazıp boşluk bırakarak token verildiğinde kimlik doğrulama yapılmış olur. 
 ![](https://i.hizliresim.com/t5w31j8.png)
 ------------
 
